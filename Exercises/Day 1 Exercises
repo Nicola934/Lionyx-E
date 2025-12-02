@@ -1,0 +1,84 @@
+print("Exercise 1:")
+
+name = "Nicola"
+BusinessName = "Lionyx-E.inc"
+FavProgLang = "Python"
+StudyHours = 3
+
+print(f"Hi, I'm {name}, owner of {BusinessName}. My favorite programming language is {FavProgLang}, and I've dedicated {StudyHours} hours to studying it daily.");
+
+print("-------------------------")
+
+print("Exercise 2:")
+
+print("Enter two numbers:")
+
+print("Number 1: ")
+number1 = int(input())
+print("Number 2 ")
+number2 = float(input())
+print(f"You entered {number1} and {number2}")
+
+difference = number2 - number1
+print(f"Difference: {difference}")
+
+sum = number1 + number2
+print(f"Sum: {sum}")
+
+product = number1 * number2
+print(f"Product: {product}")
+
+quotient = number2/ number1
+print(f"The quotient is {quotient}")
+print("----------------------------")
+
+print("Exercise 3: Vat Calculation")
+
+vat = 0.15
+print("Enter the product's price: ")
+price = float(input())
+
+vat_amount = price*vat
+
+print(f"The vat amount is R{vat_amount:,.2f}")
+
+print("------------------------")
+
+print("Exercise 4 Mini Task: Portfolio-focused")
+
+print("How many hours do you study daily: ")
+daily_hours = float(input())
+print("How many days do you study weekly")
+study_days = int(input())
+
+study_hours = daily_hours * study_days
+
+print(f"You study {daily_hours} hours for {study_days} days a week. In total, you study {study_hours} weekly")
+
+if study_hours > 14:
+    print ("Great pace!")
+elif study_hours < 10:
+    print ("Increase consistency.")
+else:
+    print ("Good pace.")
+
+print("--------------------")
+
+
+
+print("Exercise 5: Salary Estimator")
+
+tax_rate = 0.18
+
+print("Enter hourly rate: ")
+hourly_rate = float(input())
+print("Enter hours per day")
+daily_hours = float(input())
+print("Enter days per month")
+month_days = int(input())
+
+monthly_income = (hourly_rate*daily_hours) * month_days
+yearly_income = monthly_income * 12
+tax = yearly_income * tax_rate
+
+print (f"Your monthly income is R{monthly_income:,.2f}, yearly income is R{yearly_income:,.2f} and your estimated tax payment is R{tax:,.2f}")
