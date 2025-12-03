@@ -1,0 +1,19 @@
+print("Exercise 4 Mini Task: Portfolio-focused")
+
+print("How many hours do you study daily: ")
+daily_hours = float(input())
+print("How many days do you study weekly")
+study_days = int(input())
+
+study_hours = daily_hours * study_days
+
+print(f"You study {daily_hours} hours for {study_days} days a week. In total, you study {study_hours} weekly")
+
+if study_hours > 14:
+    print ("Great pace!")
+elif study_hours < 10:
+    print ("Increase consistency.")
+else:
+    print ("Good pace.")
+
+print("--------------------")
