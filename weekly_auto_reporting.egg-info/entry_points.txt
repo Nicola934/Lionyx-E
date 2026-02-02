@@ -1,0 +1,2 @@
+[console_scripts]
+weekly-report = weekly_report.cli:main

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weekly-auto-reporting"
+version = "0.1.0"
+description = "CLI-first weekly auto reporting system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Nicola Maluleke" }]
+dependencies = [
+  "pandas>=2.0",
+]
+
+[project.scripts]
+weekly-report = "weekly_report.cli:main"
+
+[tool.setuptools]
+packages = ["weekly_report"]
