@@ -1,25 +1,163 @@
-# Weekly Auto-Reporting System (Week 7 Capstone)
+Weekly Auto-Reporting System (Week 7 Capstone)
 
-This project ingests survey files from `data/inbox`, cleans + deduplicates them, computes KPIs, writes reports to `output/`, archives inputs, and can email results with attachments.
+A CLI-first automation system that ingests survey files, cleans and deduplicates data, computes KPIs, generates report artifacts, writes logs and health status, and optionally emails results with attachments.
+Designed to run unattended via Windows Task Scheduler.
 
-## 1) Setup
+What this project does
 
-Create folders:
-- data/inbox
-- data/processed
-- data/failed
-- output
-- logs
+On each run, the system:
 
-Put your input files into `data/inbox` (CSV/XLSX/JSON).
+Scans an inbox folder for new input files (CSV / Excel / JSON)
 
-Edit `config.json` to match your column names.
+Cleans and deduplicates records
 
-Install dependencies:
-- pandas
-- openpyxl (needed for Excel)
+Computes KPIs (satisfaction, recommendation, usage, etc.)
 
-## 2) Run manually
+Writes report artifacts to output/
 
-```bash
-python run_weekly_report.py --config config.json
+Archives processed inputs
+
+Updates logs and a health/status file
+
+Optionally emails reports as attachments
+
+Project structure (simplified)
+weekly_auto_reporting/
+├── weekly_report/        # Python package (pipeline, CLI, logic)
+├── data/
+│   ├── inbox/
+│   ├── processed/
+│   └── failed/
+├── output/               # reports + health file
+├── logs/                 # app.log
+├── config.json
+├── pyproject.toml
+└── README.md
+
+
+Runtime folders are created automatically if missing.
+
+Requirements
+
+Python 3.10+ (tested with Python 3.14)
+
+Windows (PowerShell examples shown)
+
+Dependencies:
+
+pandas
+
+openpyxl (for Excel inputs)
+
+Installation (recommended: virtual environment)
+
+From the project root:
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+python -m pip install -e .
+
+
+Verify installation:
+
+python -m weekly_report --help
+
+Configuration (config.json)
+
+Edit config.json to match:
+
+input/output directories
+
+input file patterns
+
+column names (service, region, satisfaction, recommendation, etc.)
+
+email settings (optional)
+
+Input files must be placed in:
+
+data/inbox/
+
+
+Supported formats:
+
+CSV
+
+XLSX
+
+JSON
+
+Running the system
+Validate configuration
+python -m weekly_report validate-config
+
+Dry run (safe simulation)
+python -m weekly_report run --dry-run
+
+Full run
+python -m weekly_report run
+
+Verbose debug logging
+
+Global flags must come before the command:
+
+python -m weekly_report --verbose run --dry-run
+
+Check last run status
+python -m weekly_report status
+
+Outputs
+
+After a run, check:
+
+Reports: output/
+
+Logs: logs/app.log
+
+Health/status file: output/health.txt
+
+Both the log file and the health file update on every run.
+
+Scheduling (Windows Task Scheduler)
+
+Recommended execution (no activation required):
+
+Program/script
+
+C:\path\to\project\.venv\Scripts\python.exe
+
+
+Arguments
+
+-m weekly_report run
+
+
+Start in
+
+C:\path\to\project
+
+
+This ensures relative paths and config.json resolve correctly.
+
+Exit codes (automation-friendly)
+
+0 — success
+
+1 — bad CLI arguments
+
+2 — pipeline failure
+
+3 — configuration error
+
+Release & packaging
+
+This project is packaged using pyproject.toml and published as a tagged release.
+
+Current release: v0.1.0
+
+Assets available via GitHub Releases (wheel + source)
+
+License
+
+MIT

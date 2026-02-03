@@ -1,9 +1,0 @@
-print("Lesson 3: Tuples")
-
-print("Tuples are immutable lists.")
-
-print("Tuples are used for:\n1. Fixed data (since you can't add any itmes)\n2. Coordinates\n 3.Return multiple values\n4. Speed boost")
-
-colors =("red", "blue", "green")
-
-input()

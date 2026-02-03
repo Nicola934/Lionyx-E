@@ -1,0 +1,24 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Build / packaging artifacts
+*.egg-info/
+dist/
+build/
+
+# Runtime outputs
+logs/
+output/
+
+# Data files (keep folders, ignore contents)
+data/inbox/*
+data/processed/*
+data/failed/*
+!data/inbox/.gitkeep
+!data/processed/.gitkeep
+!data/failed/.gitkeep
