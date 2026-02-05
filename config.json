@@ -17,16 +17,16 @@
         "satisfied_col": "Satisfied",
         "recommend_col": "Recommend",
         "date_col": "Response_Date",
-        "respondent_id_col": null
+        "respondent_id_col": "Respondent_id"
     },
 
     "email": {
-        "enabled": false,
+        "enabled": true,
         "smtp_host": "smtp.gmail.com",
         "smtp_port": 587,
         "use_starttls": true,
-        "from_addr": "YOUR_FROM@example.com",
-        "to_addrs": ["YOUR_TO@example.com"],
+        "from_addr": "NicolaMaluleke12@gmail.com",
+        "to_addrs": ["tianamaluks@gmail.com"],
         "subject_prefix": "[Weekly Report]"
     }
 }

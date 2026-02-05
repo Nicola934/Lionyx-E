@@ -14,7 +14,7 @@ from .config import ColumnMap
 
 @dataclass(frozen=True)
 class KPIResult:
-    total_reponses: int
+    total_responses: int
     satisfaction_rate: float | None
     recommendation_rate: float | None
     most_used_service: str | None
@@ -36,7 +36,7 @@ def compute_kpis(df: pd.DataFrame, cm: ColumnMap) -> KPIResult: # Accepts a Data
     return KPIResult(
         total_responses=total,
         satisfaction_rate=sat_rate,
-        recommmendation_rate=rec_rate,
+        recommendation_rate=rec_rate,
         most_used_service=str(most_used_service),
         top_region=str(top_region),
     )

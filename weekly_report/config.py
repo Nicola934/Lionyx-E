@@ -8,10 +8,10 @@ from typing import Optional, List, Dict, Any
 
 @dataclass(frozen=True)
 class ColumnMap:
-    service_col: str # name of the column for service
-    region_col: str # name of the column for region
+    service_col: str  # name of the column for service
+    region_col: str  #name of the column for region
     satisfied_col: str # name of the column for satisfied
-    recommend_col: str # name of the column for recommend
+    recommend_col: str  # name of the column for recommend
     date_col: Optional[str] = None # name of the column for date (optional)
     respondent_id_col: Optional[str] = None # name of the column for respondent ID (optional)
 
