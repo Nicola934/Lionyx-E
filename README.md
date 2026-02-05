@@ -119,6 +119,8 @@ Health/status file: output/health.txt
 
 Both the log file and the health file update on every run.
 
+Inputs are archived unchanged in data/processed/. Cleaned/deduped outputs are written to output/.
+
 Scheduling (Windows Task Scheduler)
 
 Recommended execution (no activation required):
